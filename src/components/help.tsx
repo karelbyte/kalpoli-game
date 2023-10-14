@@ -32,7 +32,7 @@ const Help = () => {
 
             <div className={display + ' fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50'}>
                 <div className="flex items-center justify-center h-screen">
-                    <div className="flex flex-col bg-gray-200 p-8 rounded-lg border border-black w-[500px] dark:border-gray-400 dark:bg-[#262B3C] dark:text-white">
+                    <div className="flex flex-col bg-gray-200 px-8 py-4 rounded-lg border border-black w-[500px] dark:border-gray-400 dark:bg-[#262B3C] dark:text-white">
                         <p className="mb-4 text-2xl self-center font-bold ">Cómo jugar</p>
                         <p className="mb-2">Adivina la palabra oculta en cinco intentos.</p>
                         <p className="mb-2">Cada intento debe ser una palabra válida de 5 letras.</p>
