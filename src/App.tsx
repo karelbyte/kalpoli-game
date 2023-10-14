@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC, useState } from 'react';
 import './App.css';
+import Board from './components/boart';
+import { GameContexProvider } from './context';
+const App: FC = () => {
 
-function App() {
+  const [theme, setTheme] = useState<string>('light')
+
+  const toggleMode = (): void => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GameContexProvider>
+      <div className={theme}>
+        <div className='bg-white dark:bg-slate-900  flex flex-col justify-start items-center min-h-screen pt-11'>
+          <Board toggleModeFn={toggleMode} theme={theme} />
+        </div>
+      </div>
+    </GameContexProvider>
   );
 }
 
