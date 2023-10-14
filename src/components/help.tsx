@@ -34,9 +34,9 @@ const Help = () => {
                 <div className="flex items-center justify-center h-screen">
                     <div className="flex flex-col bg-gray-200 p-8 rounded-lg border border-black w-[500px] dark:border-gray-400 dark:bg-[#262B3C] dark:text-white">
                         <p className="mb-4 text-2xl self-center font-bold ">Cómo jugar</p>
-                        <p className="mb-4">Adivina la palabra oculta en cinco intentos.</p>
-                        <p className="mb-4">Cada intento debe ser una palabra válida de 5 letras.</p>
-                        <p className="mb-4">Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
+                        <p className="mb-2">Adivina la palabra oculta en cinco intentos.</p>
+                        <p className="mb-2">Cada intento debe ser una palabra válida de 5 letras.</p>
+                        <p className="mb-2">Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
                         <p className="mb-4">Ejemplos.</p>
                         <div className="flex mb-4 text-[35px] font-medium justify-between">
                             <span className="px-4 bg-[#6AAA64] rounded-md border border-black">G</span>
@@ -61,9 +61,9 @@ const Help = () => {
                             <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">T</span>
                             <span className="px-4 bg-[#939B9F] rounded-md border border-black">O</span>
                         </div>
-                        <p className="mb-4">La letra O no está en la palabra.</p>
-                        <p className="mb-4">Puede haber letras repetidas. Las pistas son independientes para cada letra.</p>
-                        <p className="mb-4 self-center">¡Una palabra nueva cada 5 minutos!</p>
+                        <p className="mb-2">La letra O no está en la palabra.</p>
+                        <p className="mb-2">Puede haber letras repetidas. Las pistas son independientes para cada letra.</p>
+                        <p className="mb-2 self-center">¡Una palabra nueva cada 5 minutos!</p>
                         <button id="cerrarModal" className="self-center mt-4 bg-[#6AAA64] text-white font-bold py-2 px-16 rounded" onClick={closeModal}>
                             !JUGAR!
                         </button>

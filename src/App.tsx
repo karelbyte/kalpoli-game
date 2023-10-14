@@ -13,7 +13,7 @@ const App: FC = () => {
   return (
     <GameContexProvider>
       <div className={theme}>
-        <div className='bg-white dark:bg-slate-900  flex flex-col justify-start items-center min-h-screen pt-11'>
+        <div className='bg-white dark:bg-slate-900  flex flex-col justify-start items-center min-h-screen pt-4'>
           <Board toggleModeFn={toggleMode} theme={theme} />
         </div>
       </div>
