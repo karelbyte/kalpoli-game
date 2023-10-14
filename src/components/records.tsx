@@ -1,5 +1,7 @@
 import { GameContex } from '../context';
 import { useContext } from 'react';
+
+const PLAYED = 1
 const Records = () => {
 
     const context = useContext(GameContex);
@@ -8,7 +10,7 @@ const Records = () => {
         throw new Error('useContext must be used within a GameContex provider');
     }
 
-    const { wonGames, playedGames, showRecordModal, setShowRecordModal, timeRest } = context;
+    const { wonGames, playedGames, showRecordModal, setShowRecordModal, timeRest, word, status } = context;
 
     const toggleDisplay = (): void => {
         setShowRecordModal(showRecordModal === 'hidden' ? '' : 'hidden')
@@ -35,17 +37,18 @@ const Records = () => {
                     <div className="flex flex-col bg-gray-200 p-8 rounded-lg border border-black w-[500px] dark:border-gray-400 dark:bg-[#262B3C] dark:text-white">
                         <p className="text-[35px] self-center mb-12">Estadisticas</p>
                         <div className="flex justify-between mb-9">
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col items-center ml-6">
                                 <p className="text-[35px]">{playedGames}</p>
                                 <p>Jugadas</p>
                             </div>
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col items-center mr-6">
                                 <p className="text-[35px]">{wonGames}</p>
                                 <p>Victorias</p>
                             </div>
                         </div>
+                        {status === PLAYED && <p className="text-[15px] self-center mb-4">La palabra era: <span className='font-bold'>{word}</span></p>}
                         <p className="text-[15px] self-center mb-2">SIGUIENTE PALABRA</p>
-                        <p className="text-[35px] self-center mb-12">{min}:{secods}</p>
+                        <p className="text-[35px] self-center mb-8">{min}:{secods}</p>
                         <button id="cerrarModal" className="self-center mt-4 bg-[#6AAA64] text-white font-bold py-2 px-16 rounded" onClick={closeModal}>
                             !ACEPTAR!
                         </button>

@@ -1,6 +1,10 @@
 import React, { createContext, useState, ReactNode } from 'react';
 
 interface ContextType {
+    status: number;
+    setStatus: React.Dispatch<React.SetStateAction<number>>;
+    word: string;
+    setWord: React.Dispatch<React.SetStateAction<string>>;
     wonGames: number;
     setWonGames: React.Dispatch<React.SetStateAction<number>>;
     playedGames: number;
@@ -21,6 +25,10 @@ function GameContexProvider({ children }: { children: ReactNode }) {
 
     const storageGamePlayed = localStorage.getItem("kalpoli-game-played");
 
+    const [status, setStatus] = useState<number>(0);
+
+    const [word, setWord] = useState<string>("");
+
     const played = storageGamePlayed ? parseInt(storageGamePlayed) : 0
 
     const won = storageGameWon ? parseInt(storageGameWon) : 0
@@ -35,7 +43,23 @@ function GameContexProvider({ children }: { children: ReactNode }) {
 
     const [globalKey, setGlobalKey] = useState<string>("");
 
-    const contextProperties = { wonGames, setWonGames, playedGames, setPlayedGames, showRecordModal, setShowRecordModal, timeRest, setTimeRest, globalKey, setGlobalKey }
+
+    const contextProperties = {
+        word,
+        setWord,
+        wonGames,
+        setWonGames,
+        playedGames,
+        setPlayedGames,
+        showRecordModal,
+        setShowRecordModal,
+        timeRest,
+        setTimeRest,
+        globalKey,
+        setGlobalKey,
+        status,
+        setStatus
+    }
 
     return (
         <GameContex.Provider value={contextProperties}>

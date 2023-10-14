@@ -1,15 +1,18 @@
 import Switch from './switch'
 import Help from './help';
 import Records from './records';
-import Wordle from './wordle';
+import Wordle from './wordle/wordle';
 import { useContext, useEffect } from 'react';
 import { GameContex } from '../context';
 import Querty from './querty';
+
 
 interface IBoardProps {
     toggleModeFn: Function,
     theme: string
 }
+
+const TIME_TO_RESET = 5 * 60
 const Board = (props: IBoardProps) => {
     const { toggleModeFn, theme } = props
 
@@ -28,7 +31,7 @@ const Board = (props: IBoardProps) => {
                 setTimeRest(timeRest - 1);
             }, 1000);
         } else {
-            setTimeRest(5 * 60);
+            setTimeRest(TIME_TO_RESET);
         }
 
         return () => {
@@ -47,7 +50,7 @@ const Board = (props: IBoardProps) => {
                 </div>
             </section>
             <Wordle />
-            <Querty/>
+            <Querty />
         </>
     )
 }

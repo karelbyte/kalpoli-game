@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { GameContex } from '../context';
 
 const backgrounds = [
@@ -13,7 +13,6 @@ interface IKey {
     style: string,
     letter: string,
 }
-
 const initializeKeyboard = () => {
     return [
         [{ status: 0, style: '', letter: 'Q' }, { status: 0, style: '', letter: 'W' }, { status: 0, style: '', letter: 'E' }, { status: 0, style: '', letter: 'R' }, { status: 0, style: '', letter: 'T' },
@@ -24,7 +23,6 @@ const initializeKeyboard = () => {
         { status: 0, style: '', letter: 'B' }, { status: 0, style: '', letter: 'N' }, { status: 0, style: '', letter: 'M' }, { status: 0, style: '', letter: '←' },]
     ]
 }
-
 const Querty = () => {
 
     const context = useContext(GameContex);
@@ -33,20 +31,23 @@ const Querty = () => {
         throw new Error('useContext must be used within a GameContex provider');
     }
 
-    const { setGlobalKey } = context;
+    const { setGlobalKey, wonGames, playedGames } = context;
 
     const [keyboard, setKeyboard] = useState<IKey[][]>(initializeKeyboard())
 
     const updateKeyStatus = (key: IKey, rowIndex: number, columnIndex: number) => {
         const updatedTable = [...keyboard];
         key.status = 4
-        if (key.letter === '←' || key.letter === 'ENTER')  key.status = 0
+        if (key.letter === '←' || key.letter === 'ENTER') key.status = 0
         updatedTable[rowIndex][columnIndex] = key;
         setKeyboard(updatedTable);
         setGlobalKey(key.letter)
     };
 
- 
+    useEffect(() => {
+        setKeyboard(initializeKeyboard());
+    }, [wonGames, playedGames])
+
     return (
         <>
             <section className='bg-[#F3F3F3] dark:bg-[#262B3C] dark:text-white w-4/12 p-6 mb-4 rounded-md'>
@@ -54,10 +55,10 @@ const Querty = () => {
                     {keyboard.map((row, rowIndex) =>
                         row.map((key, columnIndex) => (
                             <div
-                            onClick={() => updateKeyStatus(key, rowIndex, columnIndex)}
+                                onClick={() => updateKeyStatus(key, rowIndex, columnIndex)}
                                 key={`${rowIndex}-${columnIndex}`}
                                 className={backgrounds[key.status] + key.style + " cursor-pointer flex justify-center items-center border" +
-                                 " dark:border-gray-700 h-14 rounded-md dark:text-white text-2xl font-bold hover:bg-slate-100 dark:hover:bg-slate-900"}
+                                    " dark:border-gray-700 h-14 rounded-md dark:text-white text-2xl font-bold hover:bg-slate-100 dark:hover:bg-slate-900"}
                             >
                                 {key.letter}
                             </div>
