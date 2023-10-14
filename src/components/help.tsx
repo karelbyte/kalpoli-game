@@ -39,27 +39,27 @@ const Help = () => {
                         <p className="mb-4">Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
                         <p className="mb-4">Ejemplos.</p>
                         <div className="flex mb-4 text-[35px] font-medium justify-between">
-                            <span className="p-6 bg-[#6AAA64] rounded-md border border-black">G</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">A</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">T</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">O</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">S</span>
+                            <span className="px-4 bg-[#6AAA64] rounded-md border border-black">G</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">A</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">T</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">O</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">S</span>
                         </div>
                         <p className="mb-4">La letra G está en la palabra y en la posición correcta.</p>
                         <div className="flex mb-4 text-[35px] font-medium justify-between">
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">V</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">O</span>
-                            <span className="p-6 bg-[#CEB02C] rounded-md border border-black">C</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">A</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">L</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">V</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">O</span>
+                            <span className="px-4 bg-[#CEB02C] rounded-md border border-black">C</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">A</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">L</span>
                         </div>
                         <p className="mb-4"> La letra C está en la palabra pero en la posición incorrecta.</p>
                         <div className="flex mb-4 text-[35px] font-medium justify-between">
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">C</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">A</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">N</span>
-                            <span className="p-6 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">T</span>
-                            <span className="p-6 bg-[#939B9F] rounded-md border border-black">O</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">C</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">A</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">N</span>
+                            <span className="px-4 bg-white rounded-md border border-black dark:bg-[#262B3C] dark:border-gray-400">T</span>
+                            <span className="px-4 bg-[#939B9F] rounded-md border border-black">O</span>
                         </div>
                         <p className="mb-4">La letra O no está en la palabra.</p>
                         <p className="mb-4">Puede haber letras repetidas. Las pistas son independientes para cada letra.</p>
